@@ -68,4 +68,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## Instalación
 
 Clonar el repositorio
-$git clone https://github.com/foxcollins/cursos.git
+
+$ git clone https://github.com/foxcollins/cursos.git
