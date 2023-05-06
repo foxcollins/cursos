@@ -4,15 +4,22 @@ namespace App\Http\Livewire\Courses;
 
 use Livewire\Component;
 use App\Models\Course;
+use Livewire\WithPagination;
+
 class ListCourse extends Component
 {
-    public $cursos;
-    public function mount(){
-        $this->cursos = Course::all();
-    }
+    use WithPagination;
+
+    public $perPage = 10;
+    private $cursos;
+   
+
     public function render()
     {
-        return view('livewire.courses.list-course');
+        $this->cursos = Course::paginate($this->perPage);
+        return view('livewire.courses.list-course', [
+            'cursos' => $this->cursos,
+        ]);
     }
 
     public function deleteCourse($id){

@@ -53,6 +53,9 @@
                         @endforeach
                     
                    </table>
+                   <div class="my-4">
+                           {{ $students->links() }}
+                    </div>
                 @else
                     <h3 class="text-xl text-center dark:text-gray-400 p-4">No existen registros <i class="fa-solid fa-triangle-exclamation"></i></h3>
                 @endif

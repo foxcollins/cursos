@@ -4,17 +4,22 @@ namespace App\Http\Livewire\Students;
 
 use Livewire\Component;
 use App\Models\Student;
+use Livewire\WithPagination;
 
 class ListStudents extends Component
 {
-    public $students;
+    use WithPagination;
+
+    public $perPage = 20;
+    private $students;
     public $student;
-    public function mount(){
-        $this->students = Student::all();
-    }
+    
     public function render()
     {
-        return view('livewire.students.list-students');
+        $this->students = Student::paginate($this->perPage);
+        return view('livewire.students.list-students', [
+            'students' => $this->students,
+        ]);
     }
 
     public function DelStudent($id){
