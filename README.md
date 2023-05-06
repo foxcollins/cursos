@@ -70,3 +70,21 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 Clonar el repositorio
 
 $ git clone https://github.com/foxcollins/cursos.git
+
+Instalar 
+$ composer install
+
+Modificar .env para la base de datos y migraciones
+
+>nota : En la carpeta public/DB esta un ejemplo que puedes importar 
+
+despues de instalar 
+
+$ php artisan migrate:fresh --seed
+
+>esto generara 30 cursos y 300 estudiantes al azar, tambien genera un usuario admin:
+email: admin@cursos.com
+pass: password
+
+
+
